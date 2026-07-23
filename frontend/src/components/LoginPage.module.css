@@ -1,0 +1,139 @@
+.loginWrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+.loginWrapper::before, .loginWrapper::after {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+  animation: float 3s ease-in-out infinite;
+}
+
+.loginWrapper::before {
+  background: radial-gradient(circle, #6366f1, transparent 70%);
+  top: -150px;
+  left: -100px;
+}
+
+.loginWrapper::after {
+  background: radial-gradient(circle, #ec4899, transparent 70%);
+  bottom: -150px;
+  right: -100px;
+  animation-delay: -1.5s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(100px, 50px) scale(1.1); }
+}
+
+.loginCard {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 50px;
+  border-radius: 30px;
+  width: 380px;
+  text-align: center;
+  color: white;
+  z-index: 1;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease;
+}
+
+.loginCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.loginCard h2 { 
+  margin-bottom: 30px; 
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.loginCard input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 25px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgb(0, 179, 255);
+  border-radius: 15px;
+  color: white;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+.loginCard input:focus {
+  border-color: #6366f1;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+
+.passwordWrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.passwordWrapper input {
+  margin-bottom: 0;
+  padding-left: 45px;
+  padding-right: 15px;
+}
+
+.eyeIcon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.eyeIcon:hover {
+  color: #6366f1;
+}
+
+.loginCard button {
+  width: 50%;
+  padding: 18px;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.4s;
+  box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+}
+
+.loginCard button:hover {
+  filter: brightness(1.2);
+  transform: scale(1.02);
+}
+
+.errorAlert {
+  color: #ff4d4d;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: rgba(255, 77, 77, 0.1);
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
